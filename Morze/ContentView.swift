@@ -14,21 +14,8 @@ struct ContentView: View {
     @State private var textEntered: String = ""
     @State private var textResult: String = ""
     
-    let symbolsDict: [String: String] = ["A": ".−", "B": "−...", "C": "−.−.", "D": "−..", "E": ".",
-                                         "F": "..−.", "G": "−−.", "H": "....", "I": "..", "J": ".−−−",
-                                         "K": "−.−", "L": ".−..", "M": "−−", "N": "−.", "O": "−−−",
-                                         "P": ".−−.", "Q": "−−.−", "R": ".−.", "S": "...", "T": "−",
-                                         "U": "..−", "V": "...−", "W": ".−−", "X": "−..−", "Y": "−.−−",
-                                         "Z": "−−..", "0": "−−−−−", "1": ".−−−−", "2": "..−−−",
-                                         "3": "...−−", "4": "....−", "5": ".....", "6": "−....",
-                                         "7": "−−...", "8": "−−−..", "9": "−−−−.",
-                                         ".": ".−.−.−", ",": "−−..−−", "?": "..−−..", "'": ".−−−−.",
-                                         "!": "−.−.−−", "/": "−..−.", "(": "−.−−.", ")": "−.−−.−",
-                                         "&": ".−...", ":": "−−−...", ";": "−.−.−.", "=": "−...−",
-                                         "+": ".−.−.", "-": "−....−", "_": "..−−.−", "\"": ".−..−.",
-                                         "$": "...−..−", "@": ".−−.−."
-                                        ]
-
+    private var viewModel = MorzeViewModel()
+    
     var body: some View {
         ZStack {
             Color.red
@@ -38,26 +25,14 @@ struct ContentView: View {
                 VStack {
                     Text(textResult)
                     
-                    TextField("Hey", text: $textEntered)
+                    TextField("Write your text to transfer to morze here", text: $textEntered)
                         .background(Color.yellow.opacity(0.9))
                         .padding([.horizontal], 20)
                         .onChange(of: textEntered) {
-                            textResult = ""
-                            someMorzeMagicHere()
+                            textResult = viewModel.textToMorzeTransformation(from: textEntered)
                         }
                 }
             }
-        }
-    }
-    
-    private func someMorzeMagicHere() {
-        for elem in textEntered.uppercased() {
-            if elem == " " {
-                textResult = "\(textResult)/"
-            } else {
-                textResult = "\(textResult) \(symbolsDict[String(elem)] ?? " ")"
-            }
-            print(textResult)
         }
     }
 }
