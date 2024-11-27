@@ -1,5 +1,5 @@
 //
-//  MorzeApp.swift
+//  MorseApp.swift
 //  Morze
 //
 //  Created by Dmytro Ryshchuk on 11/26/24.
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MorzeApp: App {
+struct MorseApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,

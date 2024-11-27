@@ -1,13 +1,13 @@
 //
-//  MorzeUITestsLaunchTests.swift
-//  MorzeUITests
+//  MorseUITestsLaunchTests.swift
+//  MorseUITests
 //
 //  Created by Dmytro Ryshchuk on 11/26/24.
 //
 
 import XCTest
 
-final class MorzeUITestsLaunchTests: XCTestCase {
+final class MorseUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
