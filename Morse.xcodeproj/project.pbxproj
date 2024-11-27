@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42F7BCD32CF6C975005DB503 /* Morze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Morze.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42F7BCE52CF6C977005DB503 /* MorzeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorzeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42F7BCEF2CF6C977005DB503 /* MorzeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorzeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F7BCD32CF6C975005DB503 /* Morse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Morse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F7BCE52CF6C977005DB503 /* MorseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F7BCEF2CF6C977005DB503 /* MorseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		42F7BCD52CF6C975005DB503 /* Morze */ = {
+		42F7BCD52CF6C975005DB503 /* Morse */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Morze;
+			path = Morse;
 			sourceTree = "<group>";
 		};
-		42F7BCE82CF6C977005DB503 /* MorzeTests */ = {
+		42F7BCE82CF6C977005DB503 /* MorseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MorzeTests;
+			path = MorseTests;
 			sourceTree = "<group>";
 		};
-		42F7BCF22CF6C977005DB503 /* MorzeUITests */ = {
+		42F7BCF22CF6C977005DB503 /* MorseUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MorzeUITests;
+			path = MorseUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		42F7BCCA2CF6C975005DB503 = {
 			isa = PBXGroup;
 			children = (
-				42F7BCD52CF6C975005DB503 /* Morze */,
-				42F7BCE82CF6C977005DB503 /* MorzeTests */,
-				42F7BCF22CF6C977005DB503 /* MorzeUITests */,
+				42F7BCD52CF6C975005DB503 /* Morse */,
+				42F7BCE82CF6C977005DB503 /* MorseTests */,
+				42F7BCF22CF6C977005DB503 /* MorseUITests */,
 				42F7BCD42CF6C975005DB503 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		42F7BCD42CF6C975005DB503 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42F7BCD32CF6C975005DB503 /* Morze.app */,
-				42F7BCE52CF6C977005DB503 /* MorzeTests.xctest */,
-				42F7BCEF2CF6C977005DB503 /* MorzeUITests.xctest */,
+				42F7BCD32CF6C975005DB503 /* Morse.app */,
+				42F7BCE52CF6C977005DB503 /* MorseTests.xctest */,
+				42F7BCEF2CF6C977005DB503 /* MorseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42F7BCD22CF6C975005DB503 /* Morze */ = {
+		42F7BCD22CF6C975005DB503 /* Morse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F7BCF92CF6C977005DB503 /* Build configuration list for PBXNativeTarget "Morze" */;
+			buildConfigurationList = 42F7BCF92CF6C977005DB503 /* Build configuration list for PBXNativeTarget "Morse" */;
 			buildPhases = (
 				42F7BCCF2CF6C975005DB503 /* Sources */,
 				42F7BCD02CF6C975005DB503 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				42F7BCD52CF6C975005DB503 /* Morze */,
+				42F7BCD52CF6C975005DB503 /* Morse */,
 			);
-			name = Morze;
+			name = Morse;
 			packageProductDependencies = (
 			);
 			productName = Morze;
-			productReference = 42F7BCD32CF6C975005DB503 /* Morze.app */;
+			productReference = 42F7BCD32CF6C975005DB503 /* Morse.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42F7BCE42CF6C977005DB503 /* MorzeTests */ = {
+		42F7BCE42CF6C977005DB503 /* MorseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F7BCFC2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorzeTests" */;
+			buildConfigurationList = 42F7BCFC2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorseTests" */;
 			buildPhases = (
 				42F7BCE12CF6C977005DB503 /* Sources */,
 				42F7BCE22CF6C977005DB503 /* Frameworks */,
@@ -131,18 +131,18 @@
 				42F7BCE72CF6C977005DB503 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				42F7BCE82CF6C977005DB503 /* MorzeTests */,
+				42F7BCE82CF6C977005DB503 /* MorseTests */,
 			);
-			name = MorzeTests;
+			name = MorseTests;
 			packageProductDependencies = (
 			);
 			productName = MorzeTests;
-			productReference = 42F7BCE52CF6C977005DB503 /* MorzeTests.xctest */;
+			productReference = 42F7BCE52CF6C977005DB503 /* MorseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		42F7BCEE2CF6C977005DB503 /* MorzeUITests */ = {
+		42F7BCEE2CF6C977005DB503 /* MorseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F7BCFF2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorzeUITests" */;
+			buildConfigurationList = 42F7BCFF2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorseUITests" */;
 			buildPhases = (
 				42F7BCEB2CF6C977005DB503 /* Sources */,
 				42F7BCEC2CF6C977005DB503 /* Frameworks */,
@@ -154,13 +154,13 @@
 				42F7BCF12CF6C977005DB503 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				42F7BCF22CF6C977005DB503 /* MorzeUITests */,
+				42F7BCF22CF6C977005DB503 /* MorseUITests */,
 			);
-			name = MorzeUITests;
+			name = MorseUITests;
 			packageProductDependencies = (
 			);
 			productName = MorzeUITests;
-			productReference = 42F7BCEF2CF6C977005DB503 /* MorzeUITests.xctest */;
+			productReference = 42F7BCEF2CF6C977005DB503 /* MorseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 42F7BCCE2CF6C975005DB503 /* Build configuration list for PBXProject "Morze" */;
+			buildConfigurationList = 42F7BCCE2CF6C975005DB503 /* Build configuration list for PBXProject "Morse" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42F7BCD22CF6C975005DB503 /* Morze */,
-				42F7BCE42CF6C977005DB503 /* MorzeTests */,
-				42F7BCEE2CF6C977005DB503 /* MorzeUITests */,
+				42F7BCD22CF6C975005DB503 /* Morse */,
+				42F7BCE42CF6C977005DB503 /* MorseTests */,
+				42F7BCEE2CF6C977005DB503 /* MorseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		42F7BCE72CF6C977005DB503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42F7BCD22CF6C975005DB503 /* Morze */;
+			target = 42F7BCD22CF6C975005DB503 /* Morse */;
 			targetProxy = 42F7BCE62CF6C977005DB503 /* PBXContainerItemProxy */;
 		};
 		42F7BCF12CF6C977005DB503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42F7BCD22CF6C975005DB503 /* Morze */;
+			target = 42F7BCD22CF6C975005DB503 /* Morse */;
 			targetProxy = 42F7BCF02CF6C977005DB503 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -458,7 +458,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorzeTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -477,7 +477,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorzeTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +494,7 @@
 				DEVELOPMENT_TEAM = K2LC483PKZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorzeUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorseUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -511,7 +511,7 @@
 				DEVELOPMENT_TEAM = K2LC483PKZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorzeUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Ryshchuk.MorseUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -523,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42F7BCCE2CF6C975005DB503 /* Build configuration list for PBXProject "Morze" */ = {
+		42F7BCCE2CF6C975005DB503 /* Build configuration list for PBXProject "Morse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F7BCF72CF6C977005DB503 /* Debug */,
@@ -532,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F7BCF92CF6C977005DB503 /* Build configuration list for PBXNativeTarget "Morze" */ = {
+		42F7BCF92CF6C977005DB503 /* Build configuration list for PBXNativeTarget "Morse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F7BCFA2CF6C977005DB503 /* Debug */,
@@ -541,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F7BCFC2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorzeTests" */ = {
+		42F7BCFC2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F7BCFD2CF6C977005DB503 /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F7BCFF2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorzeUITests" */ = {
+		42F7BCFF2CF6C977005DB503 /* Build configuration list for PBXNativeTarget "MorseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F7BD002CF6C977005DB503 /* Debug */,
