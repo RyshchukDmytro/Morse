@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Morze
+@testable import Morse
 
 final class MorseTests: XCTestCase {
 

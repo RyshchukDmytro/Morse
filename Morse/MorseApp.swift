@@ -1,6 +1,6 @@
 //
 //  MorseApp.swift
-//  Morze
+//  Morse
 //
 //  Created by Dmytro Ryshchuk on 11/26/24.
 //
