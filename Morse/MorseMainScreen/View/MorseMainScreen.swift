@@ -101,7 +101,11 @@ struct MorseMainScreen: View {
         }
         .dismissKeyboardOnTap()
         .tabItem {
-            Label("Home", systemImage: "house")
+            Label {
+                Text("Home")
+            } icon: {
+                CustomImages.house.image
+            }
         }
         .navigationTitle("Main")
     }

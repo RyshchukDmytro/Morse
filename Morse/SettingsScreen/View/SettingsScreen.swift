@@ -38,7 +38,11 @@ struct SettingsScreen: View {
         }
         .navigationTitle("Settings")
         .tabItem {
-            Label("Settings", systemImage: "ellipsis.circle")
+            Label {
+                Text("Settings")
+            } icon: {
+                CustomImages.ellipsisCircle.image
+            }
         }
     }
 }

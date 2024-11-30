@@ -23,15 +23,21 @@ struct MorseListScreen: View {
                     
                     Spacer()
                     
-                    Button("", systemImage: "waveform") {
+                    Button(action: {
                         viewModel.playMorseCode(value)
+                    }) {
+                        CustomImages.waveform.image
                     }
                 }
             }
         }
         .navigationTitle("Morse Symbols")
         .tabItem {
-            Label("Morse", systemImage: "list.bullet")
+            Label {
+                Text("Morse")
+            } icon: {
+                CustomImages.listBullet.image
+            }
         }
     }
 }
