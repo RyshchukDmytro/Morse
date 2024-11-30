@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct MorseListScreen: View {
-    private var viewModel = MorseListViewModel()
+    private let viewModel: MorseListViewModel
+    
+    init(soundPlayer: MorseSoundPlayer, morseModel: MorseModel) {
+        self.viewModel = MorseListViewModel(soundPlayer: soundPlayer, morseModel: morseModel)
+    }
     
     var body: some View {
         List {
@@ -44,6 +48,6 @@ struct MorseListScreen: View {
     }
 }
 
-#Preview {
-    MorseListScreen()
-}
+//#Preview {
+//    MorseListScreen()
+//}

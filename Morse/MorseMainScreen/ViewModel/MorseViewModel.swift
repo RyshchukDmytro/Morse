@@ -11,8 +11,13 @@ import AVFoundation
 class MorseViewModel: ObservableObject {
     @Published var isRunning = false
     
-    private let soundPlayer = MorseSoundPlayer()
-    private let morseModel = MorseModel()
+    private let soundPlayer: MorseSoundPlayer
+    private let morseModel: MorseModel
+    
+    init(soundPlayer: MorseSoundPlayer, morseModel: MorseModel) {
+        self.soundPlayer = soundPlayer
+        self.morseModel = morseModel
+    }
     
     func playMorseCode(_ morseCode: String) {
         soundPlayer.playMorseCode(morseCode)

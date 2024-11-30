@@ -6,8 +6,13 @@
 //
 
 class MorseListViewModel {
-    private let soundPlayer = MorseSoundPlayer()
-    private let morseModel = MorseModel()
+    private let soundPlayer: MorseSoundPlayer
+    private let morseModel: MorseModel
+    
+    init(soundPlayer: MorseSoundPlayer, morseModel: MorseModel) {
+        self.soundPlayer = soundPlayer
+        self.morseModel = morseModel
+    }
     
     func returnSortedSymbols() -> [(String, String)] {
         return morseModel.getMorseSymbols().sorted {

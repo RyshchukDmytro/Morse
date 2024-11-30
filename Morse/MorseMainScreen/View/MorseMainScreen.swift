@@ -14,7 +14,11 @@ struct MorseMainScreen: View {
     @State private var isSoundMode: Bool = true
     @State private var isLightMode: Bool = false
     
-    private var viewModel = MorseViewModel()
+    private let viewModel: MorseViewModel
+    
+    init(soundPlayer: MorseSoundPlayer, morseModel: MorseModel) {
+        self.viewModel = MorseViewModel(soundPlayer: soundPlayer, morseModel: morseModel)
+    }
     
     var body: some View {
         ZStack {

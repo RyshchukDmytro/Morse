@@ -6,8 +6,12 @@
 //
 
 class MorsePhrasesViewModel {
-    private let soundPlayer = MorseSoundPlayer()
     private let model = MorsePhrasesModel()
+    private let soundPlayer: MorseSoundPlayer
+    
+    init(soundPlayer: MorseSoundPlayer) {
+        self.soundPlayer = soundPlayer
+    }
     
     func getCommonPhrases() -> [String: String] {
         model.getCommonPhrases()

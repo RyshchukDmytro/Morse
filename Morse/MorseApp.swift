@@ -10,14 +10,17 @@ import SwiftData
 
 @main
 struct MorseApp: App {
+    private let soundPlayer = MorseSoundPlayer()
+    private let morseModel = MorseModel()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
-                MorseMainScreen()
+                MorseMainScreen(soundPlayer: soundPlayer, morseModel: morseModel)
                 
-                MorseListScreen()
+                MorseListScreen(soundPlayer: soundPlayer, morseModel: morseModel)
                 
-                MorsePhrasesView()
+                MorsePhrasesView(soundPlayer: soundPlayer)
                 
                 SettingsScreen()
             }

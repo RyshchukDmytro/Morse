@@ -7,8 +7,12 @@
 
 import SwiftUI
 
-struct MorsePhrasesView: View {    
-    private let viewModel = MorsePhrasesViewModel()
+struct MorsePhrasesView: View {
+    private let viewModel: MorsePhrasesViewModel
+    
+    init(soundPlayer: MorseSoundPlayer) {
+        self.viewModel = MorsePhrasesViewModel(soundPlayer: soundPlayer)
+    }
     
     private func customSection(with header: String, data: [String: String]) -> some View {
         Section(header: Text(header)) {
