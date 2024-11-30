@@ -29,6 +29,7 @@ struct ContentView: View {
                     .onChange(of: textEntered) {
                         textResult = viewModel.textToMorseTransformation(from: textEntered, isMorseMode)
                         }
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
                 
                 HStack {
                     Button(action: {
