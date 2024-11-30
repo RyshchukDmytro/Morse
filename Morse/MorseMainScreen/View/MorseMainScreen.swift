@@ -14,7 +14,7 @@ struct MorseMainScreen: View {
     @State private var isSoundMode: Bool = false
     @State private var isLightMode: Bool = false
     
-    @ObservedObject var viewModel: MorseViewModel
+    private var viewModel = MorseViewModel()
     
     var body: some View {
         ZStack {
@@ -107,5 +107,5 @@ struct MorseMainScreen: View {
 }
 
 #Preview {
-    MorseMainScreen(viewModel: MorseViewModel())
+    MorseMainScreen()
 }

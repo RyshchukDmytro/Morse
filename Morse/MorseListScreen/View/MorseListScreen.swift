@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct MorseListScreen: View {
-    @ObservedObject var viewModel: MorseViewModel
-
+    private var viewModel = MorseListViewModel()
+    
     var body: some View {
         List {
-            ForEach(viewModel.symbolsDict.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
+            ForEach(viewModel.returnSortedSymbols(), id: \.0) { key, value in
                 HStack {
                     Text(key)
                         .font(.headline)
                         .frame(width: 50, alignment: .leading)
+                    
                     Text(value)
                         .font(.body)
+                    
                     Spacer()
+                    
                     Button("", systemImage: "waveform") {
                         viewModel.playMorseCode(value)
                     }
@@ -34,5 +37,5 @@ struct MorseListScreen: View {
 }
 
 #Preview {
-    MorseListScreen(viewModel: MorseViewModel())
+    MorseListScreen()
 }

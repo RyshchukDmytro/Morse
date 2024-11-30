@@ -173,21 +173,21 @@ extension MorseViewModel {
                 if !self.isRunning { break }
                 let group = DispatchGroup()
                 
-                // Ліхтарик
+                // Light
                 group.enter()
                 DispatchQueue.global(qos: .userInitiated).async {
                     self.handleLight(symbol: symbol)
                     group.leave()
                 }
                 
-                // Звук
+                // Sound
                 group.enter()
                 DispatchQueue.global(qos: .userInitiated).async {
                     self.handleSound(symbol: symbol)
                     group.leave()
                 }
                 
-                // Синхронізація перед наступним символом
+                // Sync before next symbol
                 group.wait()
                 usleep(200_000) // Pause between signals
             }

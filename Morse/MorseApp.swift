@@ -10,17 +10,15 @@ import SwiftData
 
 @main
 struct MorseApp: App {
-    private var viewModel = MorseViewModel()
-    
     var body: some Scene {
         WindowGroup {
             TabView {
-                MorseMainScreen(viewModel: viewModel)
+                MorseMainScreen()
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
                 
-                MorseListScreen(viewModel: viewModel)
+                MorseListScreen()
                     .tabItem {
                         Label("Morse List", systemImage: "list.bullet")
                     }
