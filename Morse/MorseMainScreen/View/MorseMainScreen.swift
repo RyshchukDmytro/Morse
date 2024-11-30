@@ -11,7 +11,7 @@ struct MorseMainScreen: View {
     @State private var textEntered: String = ""
     @State private var textResult: String = ""
     @State private var isMorseMode: Bool = true
-    @State private var isSoundMode: Bool = false
+    @State private var isSoundMode: Bool = true
     @State private var isLightMode: Bool = false
     
     private var viewModel = MorseViewModel()
@@ -111,6 +111,6 @@ struct MorseMainScreen: View {
     }
 }
 
-#Preview {
-    MorseMainScreen()
-}
+//#Preview {
+//    MorseMainScreen()
+//}

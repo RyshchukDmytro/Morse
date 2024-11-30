@@ -12,6 +12,7 @@ enum CustomImages: String {
     case waveform = "waveform"
     case listBullet = "list.bullet"
     case house = "house"
+    case antennaRadiowavesLeftAndRight = "antenna.radiowaves.left.and.right"
     
     var image: Image {
         Image(systemName: self.rawValue)

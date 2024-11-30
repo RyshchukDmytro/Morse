@@ -12,19 +12,19 @@ struct MorseListScreen: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.returnSortedSymbols(), id: \.0) { key, value in
+            ForEach(viewModel.returnSortedSymbols(), id: \.0) { symbol, morse in
                 HStack {
-                    Text(key)
+                    Text(symbol)
                         .font(.headline) // prefer largeTitle
                         .frame(width: 50, alignment: .leading)
                     
-                    Text(value)
+                    Text(morse)
                         .font(.body) // prefer largeTitle
                     
                     Spacer()
                     
                     Button(action: {
-                        viewModel.playMorseCode(value)
+                        viewModel.playMorseCode(morse)
                     }) {
                         CustomImages.waveform.image
                     }

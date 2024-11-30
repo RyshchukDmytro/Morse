@@ -94,7 +94,7 @@ extension MorseViewModel {
             switch symbol {
             case ".":
                 soundPlayer.playDot()
-            case "−":
+            case "-":
                 soundPlayer.playDash()
             case " ":
                 Thread.sleep(forTimeInterval: 0.2) // Pause between symbols

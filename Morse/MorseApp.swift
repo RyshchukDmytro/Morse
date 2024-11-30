@@ -17,6 +17,8 @@ struct MorseApp: App {
                 
                 MorseListScreen()
                 
+                MorsePhrasesView()
+                
                 SettingsScreen()
             }
         }
