@@ -6,10 +6,11 @@
 //
 
 class MorseListViewModel {
-    let viewModel = MorseViewModel()
+    private let soundPlayer = MorseSoundPlayer()
+    private let morseModel = MorseModel()
     
     func returnSortedSymbols() -> [(String, String)] {
-        return viewModel.symbolsDict.sorted {
+        return morseModel.getMorseSymbols().sorted {
             let key1Category = $0.key.first?.categoryOrder ?? 3
             let key2Category = $1.key.first?.categoryOrder ?? 3
             
@@ -21,6 +22,6 @@ class MorseListViewModel {
     }
     
     func playMorseCode(_ morseCode: String) {
-        viewModel.playMorseCode(morseCode)
+        soundPlayer.playMorseCode(morseCode)
     }
 }

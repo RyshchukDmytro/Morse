@@ -13,11 +13,28 @@ class MorseSoundPlayer {
     @AppStorage("durationValue") private var durationValue: Double = 0.1
     @AppStorage("sampleRateValue") private var sampleRateValue: Double = 44100.0
     
-    func playDot() {
+    func playMorseCode(_ morseCode: String) {
+        for symbol in morseCode {
+            switch symbol {
+            case ".":
+                playDot()
+            case "-":
+                playDash()
+            case " ":
+                Thread.sleep(forTimeInterval: 0.2) // Pause between symbols
+            case "/":
+                Thread.sleep(forTimeInterval: 0.6) // Pause between words
+            default:
+                continue
+            }
+        }
+    }
+    
+    private func playDot() {
         playSound(frequency: 1000, duration: durationValue) // Dot: short sound
     }
     
-    func playDash() {
+    private func playDash() {
         playSound(frequency: 1000, duration: durationValue * 2) // Dash: long sound
     }
     

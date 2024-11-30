@@ -11,36 +11,12 @@ import AVFoundation
 class MorseViewModel: ObservableObject {
     @Published var isRunning = false
     
-    let symbolsDict: [String: String] = [
-        "A": ".−", "B": "−...", "C": "−.−.", "D": "−..", "E": ".",
-        "F": "..−.", "G": "−−.", "H": "....", "I": "..", "J": ".−−−",
-        "K": "−.−", "L": ".−..", "M": "−−", "N": "−.", "O": "−−−",
-        "P": ".−−.", "Q": "−−.−", "R": ".−.", "S": "...", "T": "−",
-        "U": "..−", "V": "...−", "W": ".−−", "X": "−..−", "Y": "−.−−",
-        "Z": "−−..", "0": "−−−−−", "1": ".−−−−", "2": "..−−−",
-        "3": "...−−", "4": "....−", "5": ".....", "6": "−....",
-        "7": "−−...", "8": "−−−..", "9": "−−−−.",
-        ".": ".−.−.−", ",": "−−..−−", "?": "..−−..", "'": ".−−−−.",
-        "!": "−.−.−−", "/": "−..−.", "(": "−.−−.", ")": "−.−−.−",
-        "&": ".−...", ":": "−−−...", ";": "−.−.−.", "=": "−...−",
-        "+": ".−.−.", "-": "−....−", "_": "..−−.−", "\"": ".−..−.",
-        "$": "...−..−", "@": ".−−.−."
-    ]
+    private let soundPlayer = MorseSoundPlayer()
+    private let morseModel = MorseModel()
     
-    private let invertedSymbolsDict: [String: String] = [
-        ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E",
-        "..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J",
-        "-.-": "K", ".-..": "L", "--": "M", "-.": "N", "---": "O",
-        ".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
-        "..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y",
-        "--..": "Z", "-----": "0", ".----": "1", "..---": "2", "...--": "3",
-        "....-": "4", ".....": "5", "-....": "6", "--...": "7", "---..": "8",
-        "----.": "9", ".-.-.-": ".", "--..--": ",", "..--..": "?", ".----.": "'",
-        "-.-.--": "!", "-..-.": "/", "-.--.": "(", "-.--.-": ")",
-        ".-...": "&", "---...": ":", "-.-.-.": ";", "-...-": "=", ".-.-.": "+",
-        "-....-": "-", "..--.-": "_", ".-..-.": "\"", "...-..-": "$", ".--.-.": "@"
-    ]
-
+    func playMorseCode(_ morseCode: String) {
+        soundPlayer.playMorseCode(morseCode)
+    }
     
     func textToMorseTransformation(from text: String, _ mode: Bool) -> String {
         var morseText = ""
@@ -55,7 +31,7 @@ class MorseViewModel: ObservableObject {
                 if char == " " {
                     return "/"
                 } else {
-                    return symbolsDict[String(char)] ?? "?"
+                    return morseModel.getMorseSymbols()[String(char)] ?? "?"
                 }
             }.joined(separator: " ")
         } else {
@@ -66,7 +42,7 @@ class MorseViewModel: ObservableObject {
                 if component == "/" {
                     morseText += " " // add blank space between words
                 } else {
-                    morseText += invertedSymbolsDict[String(component)] ?? "?" // receive right character
+                    morseText += morseModel.getInvertedMorseSymbols()[String(component)] ?? "?" // receive right character
                 }
             }
         }
@@ -85,33 +61,11 @@ class MorseViewModel: ObservableObject {
     }
 }
 
-// MARK: - Work with sound
-extension MorseViewModel {
-    func playMorseCode(_ morseCode: String) {
-        let soundPlayer = MorseSoundPlayer()
-        
-        for symbol in morseCode {
-            switch symbol {
-            case ".":
-                soundPlayer.playDot()
-            case "-":
-                soundPlayer.playDash()
-            case " ":
-                Thread.sleep(forTimeInterval: 0.2) // Pause between symbols
-            case "/":
-                Thread.sleep(forTimeInterval: 0.6) // Pause between words
-            default:
-                continue
-            }
-        }
-    }
-}
-
 // MARK: - Work with light
 extension MorseViewModel {
     func sendMorseCode(_ text: String) {
         isRunning = true
-        let morseSequence = text.uppercased().compactMap { symbolsDict[String($0)] }.joined(separator: " ")
+        let morseSequence = text.uppercased().compactMap { morseModel.getMorseSymbols()[String($0)] }.joined(separator: " ")
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
             for symbol in morseSequence {
