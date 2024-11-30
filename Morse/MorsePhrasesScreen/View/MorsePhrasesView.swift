@@ -27,7 +27,9 @@ struct MorsePhrasesView: View {
                             viewModel.playMorseCode(morse)
                         }) {
                             CustomImages.waveform.image
+                                .foregroundColor(.blue)
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
