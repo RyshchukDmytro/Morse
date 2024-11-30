@@ -99,6 +99,7 @@ struct MorseMainScreen: View {
             }
             .padding(20)
         }
+        .dismissKeyboardOnTap()
         .tabItem {
             Label("Home", systemImage: "house")
         }

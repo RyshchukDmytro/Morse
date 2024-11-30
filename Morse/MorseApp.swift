@@ -14,14 +14,10 @@ struct MorseApp: App {
         WindowGroup {
             TabView {
                 MorseMainScreen()
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
                 
                 MorseListScreen()
-                    .tabItem {
-                        Label("Morse List", systemImage: "list.bullet")
-                    }
+                
+                SettingsScreen()
             }
         }
     }

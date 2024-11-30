@@ -6,20 +6,23 @@
 //
 
 import AVFoundation
+import SwiftUI
 
 class MorseSoundPlayer {
     private var audioPlayer: AVAudioPlayer?
+    @AppStorage("durationValue") private var durationValue: Double = 0.1
+    @AppStorage("sampleRateValue") private var sampleRateValue: Double = 44100.0
     
     func playDot() {
-        playSound(frequency: 1000, duration: 0.1) // Dot: short sound
+        playSound(frequency: 1000, duration: durationValue) // Dot: short sound
     }
     
     func playDash() {
-        playSound(frequency: 1000, duration: 0.2) // Dash: long sound
+        playSound(frequency: 1000, duration: durationValue * 2) // Dash: long sound
     }
     
     private func playSound(frequency: Double, duration: Double) {
-        let sampleRate = 44100.0
+        let sampleRate = sampleRateValue
         let numSamples = Int(sampleRate * duration)
         var buffer = [Float](repeating: 0, count: numSamples)
         

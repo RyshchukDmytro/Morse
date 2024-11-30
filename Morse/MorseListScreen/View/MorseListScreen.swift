@@ -15,11 +15,11 @@ struct MorseListScreen: View {
             ForEach(viewModel.returnSortedSymbols(), id: \.0) { key, value in
                 HStack {
                     Text(key)
-                        .font(.headline)
+                        .font(.headline) // prefer largeTitle
                         .frame(width: 50, alignment: .leading)
                     
                     Text(value)
-                        .font(.body)
+                        .font(.body) // prefer largeTitle
                     
                     Spacer()
                     
