@@ -8,10 +8,10 @@
 import Foundation
 import AVFoundation
 
-class MorseViewModel {
+class MorseViewModel: ObservableObject {
     @Published var isRunning = false
     
-    private let symbolsDict: [String: String] = [
+    let symbolsDict: [String: String] = [
         "A": ".−", "B": "−...", "C": "−.−.", "D": "−..", "E": ".",
         "F": "..−.", "G": "−−.", "H": "....", "I": "..", "J": ".−−−",
         "K": "−.−", "L": ".−..", "M": "−−", "N": "−.", "O": "−−−",

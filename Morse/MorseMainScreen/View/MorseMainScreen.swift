@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MorseMainScreen.swift
 //  Morse
 //
 //  Created by Dmytro Ryshchuk on 11/26/24.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MorseMainScreen: View {
     @State private var textEntered: String = ""
     @State private var textResult: String = ""
     @State private var isMorseMode: Bool = true
     @State private var isSoundMode: Bool = false
     @State private var isLightMode: Bool = false
     
-    private var viewModel = MorseViewModel()
+    @ObservedObject var viewModel: MorseViewModel
     
     var body: some View {
         ZStack {
@@ -28,7 +28,7 @@ struct ContentView: View {
                     .background(Color.yellow.opacity(0.9))
                     .onChange(of: textEntered) {
                         textResult = viewModel.textToMorseTransformation(from: textEntered, isMorseMode)
-                        }
+                    }
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 
                 HStack {
@@ -41,7 +41,7 @@ struct ContentView: View {
                             } else if isSoundMode {
                                 viewModel.playMorseCode(textResult)
                             }
-    //                        viewModel.sendMorseCodeWithLightAndSound(textResult)
+                            //                        viewModel.sendMorseCodeWithLightAndSound(textResult)
                         }
                     }) {
                         Label {
@@ -99,9 +99,13 @@ struct ContentView: View {
             }
             .padding(20)
         }
+        .tabItem {
+            Label("Home", systemImage: "house")
+        }
+        .navigationTitle("Main")
     }
 }
 
 #Preview {
-    ContentView()
+    MorseMainScreen(viewModel: MorseViewModel())
 }
