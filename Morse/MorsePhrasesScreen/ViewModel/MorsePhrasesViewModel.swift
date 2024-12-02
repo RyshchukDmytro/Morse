@@ -24,4 +24,12 @@ class MorsePhrasesViewModel {
     func playMorseCode(_ morseCode: String) {
         soundPlayer.playMorseCode(morseCode)
     }
+    
+    func getSoundPlayer() -> MorseSoundPlayer {
+        soundPlayer
+    }
+    
+    func getPracticeModel(from phrase: String, _ morseCode: String) -> PracticeModel {
+        PracticeModel(phrase: phrase, morseCode: morseCode)
+    }
 }

@@ -15,25 +15,31 @@ struct MorseListScreen: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.returnSortedSymbols(), id: \.0) { symbol, morse in
-                HStack {
-                    Text(symbol)
-                        .font(.headline) // prefer largeTitle
-                        .frame(width: 50, alignment: .leading)
+        NavigationStack {
+            List {
+                ForEach(viewModel.returnSortedSymbols(), id: \.0) { symbol, morse in
+                    let practiceModel = viewModel.getPracticeModel(from: symbol, morse)
                     
-                    Text(morse)
-                        .font(.body) // prefer largeTitle
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        viewModel.playMorseCode(morse)
-                    }) {
-                        CustomImages.waveform.image
-                            .foregroundColor(.blue)
+                    NavigationLink(destination: PracticeScreen(soundPlayer: viewModel.getSoundPlayer(), model: practiceModel)) {
+                        HStack {
+                            Text(symbol)
+                                .font(.headline) // prefer largeTitle
+                                .frame(width: 50, alignment: .leading)
+                            
+                            Text(morse)
+                                .font(.body) // prefer largeTitle
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                viewModel.playMorseCode(morse)
+                            }) {
+                                CustomImages.waveform.image
+                                    .foregroundColor(.blue)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }

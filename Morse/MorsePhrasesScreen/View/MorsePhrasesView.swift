@@ -17,13 +17,17 @@ struct MorsePhrasesView: View {
     private func customSection(with header: String, data: [String: String]) -> some View {
         Section(header: Text(header)) {
             ForEach(data.sorted(by: { $0.key < $1.key }), id: \.key) { phrase, morse in
-                VStack(alignment: .leading) {
-                    Text(phrase)
-                        .font(.headline)
-                    
+                let practiceModel = viewModel.getPracticeModel(from: phrase, morse)
+                
+                NavigationLink(destination: PracticeScreen(soundPlayer: viewModel.getSoundPlayer(), model: practiceModel)) {
                     HStack {
-                        Text(morse)
-                            .font(.body)
+                        VStack(alignment: .leading) {
+                            Text(phrase)
+                                .font(.headline)
+                            
+                            Text(morse)
+                                .font(.body) 
+                        }
                         
                         Spacer()
                         
@@ -38,13 +42,14 @@ struct MorsePhrasesView: View {
                 }
             }
         }
-
     }
     
     var body: some View {
-        List {
-            customSection(with: "Common phrases", data: viewModel.getCommonPhrases())
-            customSection(with: "Famous messages", data: viewModel.getFamousMessages())
+        NavigationStack {
+            List {
+                customSection(with: "Common phrases", data: viewModel.getCommonPhrases())
+                customSection(with: "Famous messages", data: viewModel.getFamousMessages())
+            }
         }
         .navigationTitle("Common Phrases")
         .tabItem {
